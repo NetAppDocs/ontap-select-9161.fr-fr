@@ -1,0 +1,84 @@
+---
+sidebar: sidebar 
+permalink: task_chk_nvme_configure.html 
+keywords: ontap select, nvme storage, host preparation 
+summary: Si vous prévoyez d’utiliser des disques NVMe avec un RAID logiciel, vous devez configurer l’hôte pour qu’il reconnaisse les disques. 
+---
+= Configurer un hôte ONTAP Select pour utiliser des lecteurs NVMe
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Si vous prévoyez d’utiliser des disques NVMe avec un RAID logiciel, vous devez configurer l’hôte pour qu’il reconnaisse les disques.
+
+Utilisez le relais d'E/S VMDirectPath sur les périphériques NVMe pour optimiser l'efficacité des données. Ce paramètre expose les disques à la machine virtuelle ONTAP Select , permettant à ONTAP d'accéder directement au périphérique via PCI.
+
+.Avant de commencer
+Assurez-vous que votre environnement de déploiement répond aux exigences minimales suivantes :
+
+* ONTAP Select 9.7 ou version ultérieure avec un utilitaire d'administration de déploiement pris en charge
+* Offre de licence de plateforme Premium XL ou licence d'évaluation de 90 jours
+* VMware ESXi version 6.7 ou ultérieure
+* Périphériques NVMe conformes à la spécification 1.0 ou ultérieure
+
+
+Suivez le link:kvm-host-configuration-and-preparation-checklist.html["liste de contrôle de préparation de l'hôte"] , revoir le link:reference_chk_deploy_req_info.html["informations requises pour l'installation de l'utilitaire de déploiement"] , et le link:reference_chk_select_req_info.html["informations requises pour l'installation ONTAP Select"] sujets pour plus d'informations.
+
+.À propos de cette tâche
+Cette procédure est conçue pour être effectuée avant la création d'un cluster ONTAP Select . Vous pouvez également l'effectuer pour configurer des disques NVMe supplémentaires pour un cluster SW-RAID NVMe existant. Dans ce cas, après avoir configuré les disques, vous devez les ajouter via Deploy, comme vous le feriez pour des disques SSD supplémentaires. La principale différence est que Deploy détecte les disques NVMe et redémarre les nœuds. Lors de l'ajout de disques NVMe à un cluster existant, veuillez noter les points suivants concernant le processus de redémarrage :
+
+* Deploy gère l'orchestration du redémarrage.
+* La prise en charge et la restitution de HA s'effectuent de manière ordonnée, mais la resynchronisation des agrégats peut prendre du temps.
+* Un cluster à nœud unique entraînera des temps d’arrêt.
+
+
+Voir link:concept_stor_capacity_inc.html["Augmenter la capacité de stockage"] pour plus d'informations.
+
+.Étapes
+. Accédez au menu *Configuration du BIOS* sur l'hôte pour activer la prise en charge de la virtualisation des E/S.
+. Activez le paramètre *Intel(R) VT pour E/S dirigées (VT-d)*.
++
+image:nvme_01.png["Configuration des sockets"]
+
+. Certains serveurs prennent en charge Intel Volume Management Device (Intel VMD). Lorsque cette option est activée, elle rend les périphériques NVMe disponibles invisibles pour l'hyperviseur ESXi ; désactivez cette option avant de continuer.
++
+image:nvme_07.png["Configuration des sockets, VMD"]
+
+. Configurez les lecteurs NVMe pour le transfert vers les machines virtuelles.
++
+.. Dans vSphere, ouvrez la vue *Configurer* de l'hôte et cliquez sur *Modifier* sous *Matériel : Périphériques PCI*.
+.. Sélectionnez les lecteurs NVMe que vous souhaitez utiliser pour ONTAP Select.
++
+image:nvme_02.png["Modifier la disponibilité des périphériques PCI"]
+
++
+
+NOTE: Vous avez besoin d'une banque de données VMFS, également soutenue par un périphérique NVMe, pour héberger les disques système et la NVRAM virtuelle de la machine virtuelle ONTAP Select . Laissez au moins un lecteur NVMe disponible à cet effet lors de la configuration des autres lecteurs pour le transfert PCI.
+
+.. Cliquez sur *OK*. Les appareils sélectionnés indiquent *Disponible (en attente)*.
+
+
+. Cliquez sur *Redémarrer l'hôte*.
++
+image:nvme_03.png["Redémarrer cet hôte"]
+
+
+
+.Après avoir terminé
+Une fois les hôtes préparés, vous pouvez installer l'utilitaire ONTAP Select Deploy. Deploy vous guide dans la création de clusters de stockage ONTAP Select sur vos hôtes nouvellement préparés. Au cours de ce processus, Deploy détectera la présence des lecteurs NVMe configurés pour le transfert et les sélectionnera automatiquement pour les utiliser comme disques de données ONTAP . Vous pouvez ajuster la sélection par défaut si nécessaire.
+
+
+NOTE: Un maximum de 14 périphériques NVMe sont pris en charge pour chaque nœud ONTAP Select .
+
+image:nvme_04.png["ONTAP Select Déployer des clusters"]
+
+Une fois le cluster déployé, ONTAP System Manager vous permet de provisionner le stockage conformément aux meilleures pratiques. ONTAP active automatiquement les fonctionnalités d'optimisation du stockage Flash pour optimiser l'utilisation de votre stockage NVMe.
+
+image:nvme_05.png["préparation du stockage local"]
+
+image:nvme_06.png["Gestionnaire de système ONTAP"]

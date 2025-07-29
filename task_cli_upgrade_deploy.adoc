@@ -1,0 +1,93 @@
+---
+sidebar: sidebar 
+permalink: task_cli_upgrade_deploy.html 
+keywords: administer, administering, cli, deploy, upgrade deploy 
+summary: Vous pouvez mettre à niveau une machine virtuelle d’utilitaire de déploiement existante sur place à l’aide de l’interface de ligne de commande. 
+---
+= Mettre à niveau une instance ONTAP Select Deploy
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez mettre à niveau une machine virtuelle d’utilitaire de déploiement existante sur place à l’aide de l’interface de ligne de commande.
+
+
+
+== Avant de commencer
+
+Assurez-vous que Deploy n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau. Consultez les notes de version actuelles pour plus d'informations et les restrictions concernant la mise à niveau de l'utilitaire Deploy.
+
+
+NOTE: Si vous disposez d'une ancienne version de l'utilitaire d'administration ONTAP Select Deploy, il est conseillé de procéder à la mise à niveau vers la version actuelle. Le nœud ONTAP Select et le composant ONTAP Select Deploy sont mis à niveau indépendamment. Voir link:concept_adm_upgrading_nodes.html["Mettre à niveau les nœuds ONTAP Select"^] pour plus de détails.
+
+
+
+== Téléchargez le package de mise à niveau
+
+Pour lancer la mise à niveau, vous devez télécharger le fichier de mise à niveau « Déployer la machine virtuelle » approprié depuis le site de support NetApp . Le package de mise à niveau est formaté dans un fichier compressé unique.
+
+.Étapes
+. Accéder au link:https://mysupport.netapp.com/site/["Site de support NetApp"^] en utilisant un navigateur Web et choisissez *Téléchargements* dans le menu Téléchargements.
+. Faites défiler vers le bas et sélectionnez * ONTAP Select Deploy Upgrade*.
+. Sélectionnez la version souhaitée du package de mise à niveau.
+. Consultez le contrat de licence utilisateur final (CLUF) et sélectionnez *Accepter et continuer*.
+. Sélectionnez et téléchargez le package approprié, en répondant à toutes les invites selon les besoins de votre environnement.
+
+
+
+
+== Téléchargez le package sur la machine virtuelle Deploy
+
+Après avoir acquis le package de mise à niveau, vous devez télécharger le fichier sur la machine virtuelle Deploy.
+
+.Avant de commencer
+Vous devez disposer du fichier de mise à niveau sur votre poste de travail local. Vous devez également connaître le mot de passe du compte administrateur.
+
+.À propos de ces tâches
+Cette tâche décrit une méthode de téléchargement du fichier sur la machine virtuelle Deploy. D'autres options peuvent être plus adaptées à votre environnement.
+
+.Étapes
+. Dans un shell de commande sur votre poste de travail local, utilisez l’utilitaire scp pour télécharger le fichier image sur la machine virtuelle Deploy.
++
+Exemple
+
++
+....
+scp ONTAPdeploy2.12_upgrade.tar.gz admin@10.228.162.221:/home/admin (provide password when prompted)
+....
+
+
+.Résultat
+Le fichier de mise à niveau est stocké dans le répertoire personnel de l'utilisateur administrateur.
+
+
+
+== Appliquer le package de mise à niveau
+
+Une fois le fichier de mise à niveau téléchargé sur la machine virtuelle Deploy, vous pouvez appliquer la mise à niveau.
+
+.Avant de commencer
+Vous devez connaître le répertoire dans lequel se trouve le fichier de mise à niveau sur la machine virtuelle de l'utilitaire Deploy. Assurez-vous également que Deploy n'est pas utilisé pour effectuer d'autres tâches pendant la mise à niveau.
+
+.Étapes
+. Sign in à l’interface de ligne de commande de l’utilitaire de déploiement à l’aide de SSH avec le compte administrateur.
+. Effectuez la mise à niveau en utilisant le chemin de répertoire et le nom de fichier appropriés :
++
+`deploy upgrade -package-path FILEPATH`
+
++
+Exemple
+
++
+....
+deploy upgrade -package-path /home/admin/ONTAPdeploy2.12_upgrade.tar.gz
+....
+
+
+.Après avoir terminé
+Avant la fin de la procédure de mise à niveau, vous êtes invité à créer une sauvegarde de la configuration de la machine virtuelle Deploy. Vous devez également vider le cache du navigateur afin de pouvoir afficher les pages Deploy nouvellement créées.
