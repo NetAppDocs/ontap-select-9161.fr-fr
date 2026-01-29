@@ -173,10 +173,7 @@ Le tableau suivant fournit le type de licence minimum requis pour le stockage sp
 2+| Prise en charge de l'hyperviseur (VMware) 3+| VMware vSphere 7.0GA et mises à jour 1 à 3C VMware vSphere 8.0GA et mises à jour 1 à 3 
 
 
-2+| Prise en charge de l'hyperviseur (KVM) 3+| RedHat Enterprise Linux 64 bits (KVM) 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 et 8.6 Rocky Linux (KVM) 9 et 8 
-
-
-2+| Logiciel de gestion 3+| Suite de gestion NetApp Active IQ Unified Manager ONTAP Select Deploy Utility SnapCenter (facultatif) 
+2+| Prise en charge de l'hyperviseur (KVM) 3+| RedHat Enterprise Linux 64-bit (KVM) 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 et 8.6 Rocky Linux (KVM) KVM sur Rocky Linux 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 et 8.6 
 |===
 --
 ====

@@ -592,9 +592,6 @@
   <block id="9295b1d52d6b9b34b829dfb4fabf6d05" category="cell">Prise en charge de l'hyperviseur (VMware)</block>
   <block id="4a9dffc4c71f7a56c8a8d9b0e4381f90" category="cell">VMware vSphere 7.0GA et mises à jour 1 à 3C VMware vSphere 8.0GA et mises à jour 1 à 3</block>
   <block id="4f17c009683074f845007741fa1c26dd" category="cell">Prise en charge de l'hyperviseur (KVM)</block>
-  <block id="e12f83762dfb76b01ed77a9370b24967" category="cell">RedHat Enterprise Linux 64 bits (KVM) 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 et 8.6 Rocky Linux (KVM) 9 et 8</block>
-  <block id="049f7d1a5b523b8230ca21c727474d11" category="cell">Logiciel de gestion</block>
-  <block id="f1680d42c94acc804fddda46a7e4602d" category="cell">Suite de gestion NetApp Active IQ Unified Manager ONTAP Select Deploy Utility SnapCenter (facultatif)</block>
   <block id="bbf6609978bbf45921ea0dae059fde72" category="inline-link-macro">En savoir plus sur les types de licences Capacity Tier et Capacity Pool</block>
   <block id="10aa5d1416b41ba5cd05d276a6c13328" category="paragraph"><block ref="6799f681592f9a0a7cf264c2b7bcd3d7" category="inline-link-macro-rx"></block> .</block>
   <block id="91d83e84a03b1a016f22b6743fa4a929" category="summary">Une fois que vous avez déterminé qu'ONTAP ONTAP Select est adapté à votre organisation, vous pouvez acheter les licences nécessaires à un déploiement en production. Vous devez choisir le modèle de licence par niveaux de capacité ou par pools de capacité, ainsi que la capacité de stockage pour chaque déploiement.</block>
@@ -3851,4 +3848,5 @@
   <block id="0a15f7ba73868a32304fdf52855463c9" category="sidebar">Supprimer les images ONTAP Select</block>
   <block id="afc9d68a1be701598b5ef94dc0be2844" category="sidebar">Récupérer le déploiement pour un cluster à deux nœuds</block>
   <block id="c0b79db5f258f0c991a383cbdbf001dd" category="list-text">Synchronisation active de SnapMirror</block>
+  <block id="2d5784f9c17fd802542d0f0e9599f955" category="cell">RedHat Enterprise Linux 64-bit (KVM) 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 et 8.6 Rocky Linux (KVM) KVM sur Rocky Linux 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.8, 8.7 et 8.6</block>
 </blocks>
