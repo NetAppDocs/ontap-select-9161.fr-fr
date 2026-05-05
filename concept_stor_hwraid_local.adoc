@@ -112,7 +112,7 @@ Alternativement, il est possible de commencer par créer un seul datastore sur u
 La création initiale du cluster permet de créer un cluster ONTAP Select consommant tout ou partie de l'espace du datastore initial. Une deuxième étape consiste à effectuer une ou plusieurs opérations d'ajout de capacité en utilisant des datastores supplémentaires jusqu'à atteindre la capacité totale souhaitée. Cette fonctionnalité est détaillée dans la section link:concept_stor_capacity_inc.html["Augmenter la capacité de stockage"] .
 
 
-NOTE: La surcharge VMFS est différente de zéro (voir link:https://kb.vmware.com/s/article/1001618["VMware KB 1001618"] ), et la tentative d'utilisation de l'intégralité de l'espace signalé comme libre par une banque de données a entraîné des erreurs parasites lors des opérations de création de cluster.
+NOTE: La surcharge VMFS est non nulle (VMware KB 1001618), et la tentative d'utiliser l'espace entier signalé comme libre par un datastore a entraîné des erreurs parasites lors des opérations de création de cluster.
 
 Une mémoire tampon de 2 % est laissée inutilisée dans chaque banque de données. Cet espace ne nécessite pas de licence de capacité, car il n'est pas utilisé par ONTAP Select. ONTAP Deploy calcule automatiquement le nombre exact de gigaoctets pour la mémoire tampon, tant qu'aucune limite de capacité n'est spécifiée. Si une limite de capacité est spécifiée, cette taille est appliquée en premier. Si la taille de la limite de capacité est inférieure à la taille de la mémoire tampon, la création du cluster échoue et affiche un message d'erreur spécifiant la taille maximale correcte pouvant servir de limite de capacité :
 
