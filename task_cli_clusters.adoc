@@ -18,6 +18,7 @@ Il existe plusieurs tâches connexes que vous pouvez effectuer pour administrer 
 
 
 
+[[delete-an-ontap-select-clusters]]
 == Supprimer un cluster ONTAP Select
 
 Vous pouvez supprimer un cluster ONTAP Select lorsqu'il n'est plus nécessaire à l'aide de l'interface de ligne de commande.

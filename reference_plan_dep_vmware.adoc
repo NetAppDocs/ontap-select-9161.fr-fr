@@ -21,6 +21,7 @@ CAUTION: Vous ne devez pas modifier directement la configuration d'une machine v
 
 
 
+[[hypervisor-independent]]
 == Indépendant de l'hyperviseur
 
 Les utilitaires d’administration ONTAP Select et ONTAP Select Deploy sont tous deux indépendants de l’hyperviseur.
@@ -64,6 +65,7 @@ Vous ne pouvez pas ajouter un nœud ONTAP Select directement à un cluster maté
 
 
 
+[[vmware-hypervisor-environment]]
 == Environnement d'hyperviseur VMware
 
 Il existe plusieurs exigences et restrictions spécifiques à l’environnement VMware que vous devez prendre en compte avant d’installer l’utilitaire ONTAP Select Deploy dans un environnement VMware.

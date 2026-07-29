@@ -19,6 +19,7 @@ Découvrez les nouvelles fonctionnalités et améliorations des versions prises 
 
 
 
+[[ontap-select-9-16-1]]
 == ONTAP Select 9.16.1
 
 ONTAP Select 9.16.1 inclut plusieurs nouvelles fonctionnalités et améliorations.
@@ -36,6 +37,7 @@ Prise en charge mise à jour de l'hyperviseur KVM:: À partir d' ONTAP Select 9.
 
 
 
+[[ontap-select-9-15-1]]
 == ONTAP Select 9.15.1
 
 ONTAP Select 9.15.1 inclut plusieurs nouvelles fonctionnalités et améliorations.
@@ -62,6 +64,7 @@ NOTE: La prise en charge de l’extension et de la contraction des clusters est 
 
 
 
+[[ontap-select-9-14-1]]
 == ONTAP Select 9.14.1
 
 ONTAP Select 9.14.1 inclut plusieurs nouvelles fonctionnalités et améliorations.
@@ -74,6 +77,7 @@ Prise en charge améliorée de VMware ESXi:: ONTAP Select 9.14.1 inclut la prise
 
 
 
+[[ontap-select-9-13-1]]
 == ONTAP Select 9.13.1
 
 ONTAP Select 9.13.1 inclut plusieurs nouvelles fonctionnalités et améliorations.
@@ -85,6 +89,7 @@ Prise en charge mise à jour ONTAP Select Deploy:: Depuis avril 2024, ONTAP Sele
 
 
 
+[[ontap-select-9-12-1]]
 == ONTAP Select 9.12.1
 
 ONTAP Select 9.12.1 bénéficie de la plupart des nouveautés de la version actuelle du produit principal ONTAP . Elle n'inclut aucune nouvelle fonctionnalité ni amélioration spécifique à ONTAP Select.
@@ -93,6 +98,7 @@ Depuis avril 2024, ONTAP Select Deploy 9.12.1 n'est plus disponible sur le site 
 
 
 
+[[ontap-select-9-11-1]]
 == ONTAP Select 9.11.1
 
 ONTAP Select 9.11.1 inclut plusieurs nouvelles fonctionnalités et améliorations.
@@ -123,6 +129,7 @@ NetApp recommande vivement à ses clients de planifier et d'exécuter une migrat
 
 
 
+[[ontap-select-9-10-1]]
 == ONTAP Select 9.10.1
 
 ONTAP Select 9.10.1 inclut plusieurs nouvelles fonctionnalités et améliorations.
@@ -150,6 +157,7 @@ L'hyperviseur KVM n'est plus pris en charge:: À partir d' ONTAP Select 9.10.1, 
 
 
 
+[[ontap-select-9-9-1]]
 == ONTAP Select 9.9.1
 
 ONTAP Select 9.9.1 inclut plusieurs nouvelles fonctionnalités et améliorations.
@@ -167,6 +175,7 @@ Prise en charge VMware ESXi mise à jour:: La prise en charge de VMware ESXi a �
 
 
 
+[[ontap-select-9-8]]
 == ONTAP Select 9.8
 
 Plusieurs fonctionnalités nouvelles et modifiées sont incluses dans ONTAP Select 9.8.

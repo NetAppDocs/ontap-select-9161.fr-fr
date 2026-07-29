@@ -18,6 +18,7 @@ Si vous utilisez ONTAP Select sur VMware ESXi, vous pouvez mettre à niveau le l
 
 
 
+[[before-you-begin]]
 == Avant de commencer
 
 Avant de mettre à niveau le logiciel ESXi sur les hyperviseurs hébergeant un cluster ONTAP Select , vous devez préparer et sélectionner la procédure de mise à niveau adaptée à votre environnement.
@@ -27,12 +28,14 @@ CAUTION: Si vous optez pour une mise à niveau vers VMware ESXi 6.5, vous devez 
 
 
 
+[[become-familiar-with-how-to-upgrade-vmware-esxi]]
 === Familiarisez-vous avec la mise à niveau de VMware ESXi
 
 La mise à niveau du logiciel ESXi est un processus décrit et pris en charge par VMware. La mise à niveau de l'hyperviseur fait partie de la procédure de mise à niveau plus globale avec ONTAP Select. Consultez la documentation VMware pour plus d'informations.
 
 
 
+[[select-an-upgrade-procedure]]
 === Sélectionnez une procédure de mise à niveau
 
 Plusieurs procédures de mise à niveau sont disponibles. Choisissez celle qui vous convient en fonction des critères suivants :
@@ -50,18 +53,21 @@ Si vous utilisez ces versions antérieures et tentez une mise à niveau, la mach
 
 
 
+[[upgrade-the-deploy-administration-utility]]
 === Mettre à niveau l'utilitaire d'administration Deploy
 
 Avant d'effectuer une mise à niveau à l'aide de l'utilitaire Deploy, vous devrez peut-être mettre à niveau votre instance Deploy. En général, il est conseillé de mettre à niveau vers la version la plus récente de Deploy. L'utilitaire Deploy doit prendre en charge la version d' ONTAP Select que vous utilisez. Consultez les notes de version ONTAP Select pour plus d'informations.
 
 
 
+[[after-the-update-procedure-is-complete]]
 === Une fois la procédure de mise à jour terminée
 
 Si vous sélectionnez une procédure de mise à niveau utilisant l'utilitaire Deploy, vous devez actualiser le cluster à l'aide de Deploy une fois tous les nœuds mis à niveau. Pour plus d'informations, consultez la section « Actualisation de la configuration du cluster Deploy ».
 
 
 
+[[upgrade-a-single-node-cluster-using-deploy]]
 == Mettre à niveau un cluster à nœud unique à l'aide de Deploy
 
 Vous pouvez utiliser l’utilitaire d’administration Déployer dans le cadre de la procédure de mise à niveau de l’hyperviseur VMware ESXi hébergeant un cluster à nœud unique ONTAP Select .
@@ -97,6 +103,7 @@ Vous devez effectuer une opération d’actualisation du cluster à l’aide de 
 
 
 
+[[upgrade-a-multi-node-cluster-using-deploy]]
 == Mettre à niveau un cluster multi-nœuds à l'aide de Deploy
 
 Vous pouvez utiliser l’utilitaire d’administration Déployer dans le cadre de la procédure de mise à niveau des hyperviseurs VMware ESXi hébergeant un cluster multi-nœuds ONTAP Select .
@@ -147,6 +154,7 @@ Vous devez effectuer la procédure de mise à niveau pour chaque hôte utilisé 
 
 
 
+[[upgrade-a-single-node-cluster-without-deploy]]
 == Mettre à niveau un cluster à nœud unique sans déploiement
 
 Vous pouvez mettre à niveau l'hyperviseur VMware ESXi hébergeant un cluster à nœud unique ONTAP Select sans utiliser l'utilitaire d'administration Deploy.
@@ -182,6 +190,7 @@ Vous devez effectuer une opération d’actualisation du cluster à l’aide de 
 
 
 
+[[upgrade-a-multi-node-cluster-without-deploy]]
 == Mettre à niveau un cluster multi-nœuds sans déploiement
 
 Vous pouvez mettre à niveau les hyperviseurs VMware ESXi hébergeant un cluster multi-nœuds ONTAP Select sans utiliser l'utilitaire d'administration Deploy.
