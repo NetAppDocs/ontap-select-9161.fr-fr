@@ -72,6 +72,6 @@ Vous devez acquérir une licence distincte pour toute fonctionnalité ONTAP qui 
 NOTE: Vous n’avez pas besoin d’une licence FabricPool lorsque vous utilisez StorageGRID.
 
 .Informations connexes
-* link:concept_ots_overview.html#comparing-ontap-select-and-ontap-9["Comparaison ONTAP Select et d' ONTAP 9"]
+* link:concept_ots_overview.html#compare-ontap-select-and-ontap-9["Comparaison ONTAP Select et d' ONTAP 9"]
 * link:https://mysupport.netapp.com/site/systems/master-license-keys["Clés de licence principales NetApp ONTAP"^]
 
